@@ -1,0 +1,23 @@
+package com.springboot.bankapp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.bankapp.model.Customer;
+import com.springboot.bankapp.repository.CustomerRepository;
+import com.springboot.bankapp.service.CustomerService;
+
+@RestController
+public class CustomerController {
+
+	
+	@Autowired
+	private CustomerService customerService;
+	
+	@PostMapping("/customer")
+	public Customer postCustomer(@RequestBody Customer customer) {
+		return customerService.postCustomer(customer);
+	}
+}
