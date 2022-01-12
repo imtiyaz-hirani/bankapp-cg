@@ -33,7 +33,9 @@ public class TransactionController {
 	@PostMapping("/transfer")
 	public Transaction doTransfer(Principal principal, @RequestBody Transfer transfer) {
 		String username=principal.getName(); 
-		
+		System.out.println(username);
+		System.out.println(transfer);
+		System.out.println("In transfer api....");
 		/*
 		 * STEP 1: 
 		 * Fetch details of fromAccount

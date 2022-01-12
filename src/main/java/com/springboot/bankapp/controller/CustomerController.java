@@ -36,6 +36,7 @@ public class CustomerController {
 	@GetMapping("/user")
 	public UserInfo getUser(Principal principal) {
 		UserInfo user = customerService.getUserByName(principal.getName());
+		System.out.println(user);
 		return user; 
 	}
 }
